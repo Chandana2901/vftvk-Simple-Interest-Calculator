@@ -1,16 +1,34 @@
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+    <script src="edxScript.js"></script>
+    <link rel="stylesheet" href="edxStyle.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="calc">
+            <h1>Simple Interest Calculator</h1>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+            Amount : <input type="number"  id="principal" required>  <br><br>
+            <div class="slidecontainer">
+                Rate : <input type="range" min="1" max="100" value="1" class="slider" id="myRange" oninput="showVal(this.value)" onchange="showVal(this.value)"><span id="showRate"></span>
+            </div><br>
+            No of years : <select name="years" id="years">
+                <option value="1" selected="selected">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select><br><br>
+              <button onclick="compute()">Compute</button><br>
+              <hr>
+                <span id="result"></span><br>
 
-        <button onclick="compute()">Compute</button>
+
+            
+        </div>
     </body>
 </html>
